@@ -37,4 +37,14 @@ def decode_review(text):
 print(decode_review(train_data[0]))
 
 #准备数据
-
+#由于影评的长度必须相同，我们将使用 pad_sequences 函数将长度标准化
+train_data = keras.preprocessing.sequence.pad_sequences(train_data,
+                                                        value=word_index["<PAD>"],
+                                                        padding="post",
+                                                        maxlen=256)
+test_data = keras.preprocessing.sequence.pad_sequences(test_data,
+                                                        value=word_index["<PAD>"],
+                                                        padding="post",
+                                                        maxlen=256)
+print(len(train_data[0]),len(train_data[1]),len(train_data[2]))
+print(train_data[0])
