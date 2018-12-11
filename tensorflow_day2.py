@@ -48,4 +48,3 @@ test_data = keras.preprocessing.sequence.pad_sequences(test_data,
                                                         maxlen=256)
 print(len(train_data[0]),len(train_data[1]),len(train_data[2]))
 print(train_data[0])
-12123
